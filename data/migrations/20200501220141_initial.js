@@ -18,6 +18,7 @@ exports.up = async function (knex) {
      table.integer('recipes_id')
           .references('id')
           .inTable('recipes')
+    //CASCADE deletes/updates all records being referenced      
           .onDelete('CASCADE')
           .onUpdate('CASCADE')
       table.integer('ingredients_id')
